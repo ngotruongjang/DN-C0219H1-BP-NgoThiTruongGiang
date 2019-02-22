@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <form action="#">
+        <input id="input1" type="text" name="number1"> &nbsp; <input id="input2" type="text" name="number2">
+        <br>
+        <br>
+        <button type="button" onclick="addButton()">Addition(+)</button>
+        <button type="button" onclick="subButton()">Subtraction(-)</button>
+        <button type="button" onclick="multiButton()">Multiplication(X)</button>
+        <button type="button" onclick="divButton()">Division(/)</button>
+    </form>
+
+    <script>
+        var number1;
+        var number2;
+
+        function getInput() {
+            number1 = Number(document.getElementById('input1').value);
+            number2 = Number(document.getElementById('input2').value);
+        }
+
+        function addButton() {
+            getInput();
+            var a = number1 + number2;
+            document.getElementById('Result').innerText = "Result Addition " + a;
+        }
+
+        function subButton() {
+            var b = number1 - number2;
+            document.getElementById('Result').innerText = "Result Subtraction " + b;
+        }
+
+        function multiButton() {
+            var c = number1 * number2;
+            document.getElementById('Result').innerText = "Result Multiplication " + c;
+
+        }
+
+        function divButton() {
+            var d = div(number1, number2);
+            document.getElementById('Result').innerText = "Result Division " + d;
+        }
+
+        //Phan mo rong cong thuc 
+        function div(a, b) {
+            return a / b;
+        }
+        
+    </script>
+
+    <p id="Result"></p>
+</body>
+
+</html>
