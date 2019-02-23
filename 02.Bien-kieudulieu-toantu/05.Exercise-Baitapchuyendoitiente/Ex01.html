@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Money exchange</title>
+</head>
+<body>
+    <form action="#">
+        Amount <input id="amount" type="text">
+        <br>
+        <br>
+        From Currency <select name="currency1" id="from" size="1">
+            <option value="vnd">VND</option>
+            <option value="usd">USD</option>
+         </select>
+        &emsp; To Currency <select name="currency2" id="to" size="1">
+            <option value="usd">USD</option>
+            <option value="vnd">USD</option>
+         </select>
+
+         &emsp; <button type="button" onclick="convert()">Convert</button>
+         <br>
+    </form>
+        <script>
+            var amount
+            var currency1;
+            var currency2;
+        
+            function chooseCurrency() {
+                amount = Number(document.getElementById('amount').value);
+                currency1 = document.getElementById('from').value;
+                currency2 = document.getElementById('to').value;
+            }
+            function convert() {
+                chooseCurrency()
+                if (currency1 == 'vnd') {
+                    if (currency2 == 'usd') {
+                        var result = amount/23000;
+                    } else {
+                        var result = amount;
+                    }
+                } else {
+                    if (currency1 == 'usd') {
+                        if (currency2 == 'usd') {
+                            var result = amount*23000;
+                        } else {
+                            var result = amount;
+                        }
+                    }
+                }                                            
+                document.getElementById('Result').innerText = "Result : " + result;
+            }
+
+        </script>
+   <p id = "Result"></p>
+</body>
+</html>
