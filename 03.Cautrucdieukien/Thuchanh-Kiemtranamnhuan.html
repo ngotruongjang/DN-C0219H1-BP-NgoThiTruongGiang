@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF = 8">
+    <title>Kiem tra nam nhuan</title>
+</head>
+
+<body>
+    <script>
+        var year = parseInt(prompt("Enter a year " ));
+        var isLeapYear = false
+
+        var isDivisionBy4 = year % 4 == 0 ;
+        if (isDivisionBy4) {
+            var isDivisionBy100 = year % 100 == 0 ;
+            if (isDivisionBy100) {
+                var isDivisionBy400 = year % 400 == 0 ;
+                if (isDivisionBy400) {
+                    isLeapYear = true ;
+                }
+                
+            } else {
+                isLeapYear = true ; 
+            } 
+        } 
+        if (isLeapYear) {
+            alert(year + " is a leap year ");        
+        } else {
+            alert (year + " is not a leap year");
+        }
+    
+
+    </script>
+</body>
