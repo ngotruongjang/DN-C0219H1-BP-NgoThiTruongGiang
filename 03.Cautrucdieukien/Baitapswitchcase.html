@@ -10,11 +10,11 @@
     <p>Nhập tháng cần tính ngày vào ô bên dưới</p>
     <form action="#">
         Tháng <input id="inputMonth" type="text">
-        &emsp; <button type="button" onclick="calculateNumberOfMonth()">Tính số ngày</button>
+        &emsp; <button type="button" onclick="calculateNumberDaysOfMonth()">Tính số ngày</button>
     </form>
 
     <script>
-        function calculateNumberOfMonth() {
+        function calculateNumberDaysOfMonth() {
             var month = document.getElementById('inputMonth').value;
             switch (month) {
                 case "1":
