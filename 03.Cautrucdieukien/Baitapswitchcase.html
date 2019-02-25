@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF = 8">
+    <title> Bai tap switch case</title>
+</head>
+
+<body>
+    <p>Nhập tháng cần tính ngày vào ô bên dưới</p>
+    <form action="#">
+        Tháng <input id="inputMonth" type="text">
+        &emsp; <button type="button" onclick="calculateNumberOfMonth()">Tính số ngày</button>
+    </form>
+
+    <script>
+        function calculateNumberOfMonth() {
+            var month = document.getElementById('inputMonth').value;
+            switch (month) {
+                case "1":
+                case "3":
+                case "5":
+                case "7":
+                case "8":
+                case "10":
+                case "12":
+                    var day = "31 ngày";
+                    break;
+                case "2":
+                    var day = "28 hoặc 29 ngày";
+                    break;
+                default:
+                    var day = "30 ngày";
+                    break;
+            }
+            document.getElementById('month').innerHTML = "Tháng " + month + " có " + day;
+        }
+
+
+
+    </script>
+    <p id="month"></p>
+
+</body>
+
+</html>
