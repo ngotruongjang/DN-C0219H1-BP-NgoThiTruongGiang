@@ -11,10 +11,10 @@
         <input id="input1" type="text" name="number1"> &nbsp; <input id="input2" type="text" name="number2">
         <br>
         <br>
-        <button type="button" onclick="addButton()">Addition(+)</button>
-        <button type="button" onclick="subButton()">Subtraction(-)</button>
-        <button type="button" onclick="multiButton()">Multiplication(X)</button>
-        <button type="button" onclick="divButton()">Division(/)</button>
+        <button type="button" onclick="add()">Addition(+)</button>
+        <button type="button" onclick="sub()">Subtraction(-)</button>
+        <button type="button" onclick="multi()">Multiplication(X)</button>
+        <button type="button" onclick="div()">Division(/)</button>
     </form>
 
     <script>
@@ -26,24 +26,27 @@
             number2 = Number(document.getElementById('input2').value);
         }
 
-        function addButton() {
+        function add() {
             getInput();
             var a = number1 + number2;
             document.getElementById('Result').innerText = "Result Addition " + a;
         }
 
-        function subButton() {
+        function sub() {
+            getInput();
             var b = number1 - number2;
             document.getElementById('Result').innerText = "Result Subtraction " + b;
         }
 
-        function multiButton() {
+        function multi() {
+            getInput();
             var c = number1 * number2;
             document.getElementById('Result').innerText = "Result Multiplication " + c;
 
         }
 
-        function divButton() {
+        function div() {
+            getInput();
             var d = div(number1, number2);
             document.getElementById('Result').innerText = "Result Division " + d;
         }
