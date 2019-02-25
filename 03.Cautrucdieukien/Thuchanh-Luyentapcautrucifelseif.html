@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = en>
+    <head>
+        <meta charset="UTF = 8">
+        <title>Luyen tap cau truc if else if</title>
+    </head>
+    <body>
+        <script>
+        var username = prompt("Please enter your name here", '');
+        if (username === 'Admin') {
+            var password = prompt("Please enter your password", '');
+            if (password === 'The Master') {
+                alert('Welcome');
+            } else if (password === 'null') {
+                alert('Cancelled');
+            } else {
+                alert('Wrong password');
+            }
+        }else if (username === 'null') {
+            alert('Cancelled');
+            
+        } else {
+            alert('I do not know you')
+        }
+
+        </script>
+    </body>
+
+</html>
