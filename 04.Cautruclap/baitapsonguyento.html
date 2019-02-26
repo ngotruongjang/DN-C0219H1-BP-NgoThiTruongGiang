@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF=8">
+    <title>Cac so nguyen to tim duoc</title>
+</head>
+
+<body>
+    <h2>Cac so nguyen to tim duoc</h2>
+    <script lang="javascript">
+        
+        var nums = Number(prompt('Nhap vao mot so tu ban phim:'));
+        var result = "";
+        var count = 0;
+        var n = 2;
+        while (count < nums) {
+            if (laSoNguyenTo(n)) {
+                result += (n + " ");
+                count++;
+            }
+            n++;
+        }
+        function laSoNguyenTo(n) {
+
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) return false;
+            }
+            return true;
+        }
+        document.write(result);
+    </script>
+</body>
+
+</html>
