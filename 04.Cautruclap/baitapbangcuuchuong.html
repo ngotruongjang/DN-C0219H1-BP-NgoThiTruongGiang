@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF=8">
+    <title>Sinh bang cuu chuong</title>
+</head>
+
+<body>
+
+    <script lang="javascript">
+        var sout, i, j;
+        sout = "<table border='3' width='900' cellspacing='0' cellpadding='2'>";
+        i = 1 ; j = 2;
+        while (i < 10) {
+            sout = sout + "<tr>";
+            j = 2;
+            while (j < 10) {
+                sout = sout + "<td>" + j + "&times;" + i + "=" + i * j + "</td>";
+                j++;
+            }
+            sout = sout + "</tr>";
+            i++;
+        }
+        sout = sout + "</table>";
+        document.write(sout);
+
+    </script>
+
+</body>
+
+</html>
