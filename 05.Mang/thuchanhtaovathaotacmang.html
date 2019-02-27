@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF=8">
+    <title>Array Element</title>
+    <style>
+        body {
+            padding-top: 20px
+        }
+    </style>
+</head>
+
+<body>
+    Enter a number
+    <br>
+    <input type="text" id="txtValue"></input>
+    <input type="button" id="btnAdd" value="Add" onclick="add_an_element_to_array()"></input>
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array()"></input>
+    <p id="result"></p>
+
+    <script>
+        let i = 0;
+        let array = Array();
+
+        function add_an_element_to_array() {
+            array[i] = document.getElementById('txtValue').value;
+            alert("Element " + array[i] + " added in text " + i);
+            i++;
+            document.getElementById(txtValue).value;
+        }
+
+        function display_array() {
+            let j = "<hr/>";
+            for (let i = 0; i < array.length; i++) {
+                j += "Element " + i + " = " + array[i] + "<br/>";
+            } document.getElementById('result').innerHTML = j;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
