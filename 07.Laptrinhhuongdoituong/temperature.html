@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Convert Temperature</title>
+</head>
+
+<body>
+
+    <script>
+        let MyDoC = function (doC) {
+            this.doC = doC;
+            this.convertToDoF = function () {
+                return (doC * 1.8) + 32;
+            };
+            this.convertToDoK = function () {
+                return (doC + 273.15);
+            };
+        };
+        let myDoC = new MyDoC(25);
+        let doF = myDoC.convertToDoF();
+        let doK = myDoC.convertToDoK();
+
+        document.write("Ket qua chuyen doi la " + doF + " do F" + "<br>");
+        document.write("Ket qua chuyen doi la " + doK + " do K");
+
+
+    </script>
+
+</body>
+
+</html>
