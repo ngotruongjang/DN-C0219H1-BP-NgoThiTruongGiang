@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check Account</title>
+</head>
+
+<body>
+    <script>
+        function checkAccountValidate(str) {
+            regexp = /^[_a-z0-9]{6,}$/;
+
+            if (regexp.test(str)) {
+                return true;
+            }
+            return false;
+        }
+        var acc1 = "123abc_";
+        console.log(checkAccountValidate(acc1));
+        var acc2 = "ds_dja";
+        console.log(checkAccountValidate(acc2));
+        var acc3 = "1@_dkhk_1hk";
+        console.log(checkAccountValidate(acc3));
+
+    </script>
+
+</body>
+
+</html>
