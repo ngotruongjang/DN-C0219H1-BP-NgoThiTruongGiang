@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check Name of Class</title>
+</head>
+
+<body>
+    <script>
+        function className(str) {
+            regexp = /^(C|A|P)[0-9]{4}(G|H|I|K|L|M)$/;
+            if(regexp.test(str)) {
+                return true;
+            } 
+            return false;
+        }
+
+        var name1 = "A3871G";
+        console.log(className(name1));
+
+        var name2 = "b3871G";
+        console.log(className(name2));
+
+        var name3 = "C3871M";
+        console.log(className(name3));
+
+
+    </script>
+
+</body>
+
+</html>
