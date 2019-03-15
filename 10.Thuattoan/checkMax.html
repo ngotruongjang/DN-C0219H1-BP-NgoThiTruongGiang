@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check Max Number</title>
+</head>
+
+<body>
+    <script>
+        function checkMaxNumber(arr) {
+            let max = arr[0];
+            for (let i = 1; i < arr.length; ++i) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        function dispArr(arr) {
+            for (let i = 0; i < arr.length; ++i) {
+                document.write(arr[i] + " ");
+                if (i % 10 == 9) {
+                    document.write("<br>");
+                }
+            }
+            if (i % 10 != 0) {
+                document.write("<br>");
+            }
+        }
+
+        let nums = [];
+        for (let i = 0; i < 100; ++i) {
+            nums[i] = Math.floor(Math.random() * 101);
+        }
+
+        let maxNums = checkMaxNumber(nums);
+        dispArr(nums);
+
+        document.write("<br/>");
+        document.write("The max number of array is : " + maxNums);
+
+
+    </script>
+
+</body>
+
+</html>

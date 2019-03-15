@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bouncing Ball Game</title>
+</head>
+
+<body style="background-color: gray" onload="drawBall()">
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+
+
+
+    <script>
+
+        function gameBoard(ctx, width, height) {
+            this.ctx = ctx;
+            this.width = width;
+            this.height = height;
+
+
+            this.draw = function () {
+                this.ctx.fillStyle = "blue";
+                this.ctx.fillRect(0, 0, 480, 320);
+            }
+        }
+
+
+        function drawBall() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            gameBoard.draw();
+            drawBar();
+            docReady();
+            checBallBar();
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = "black";
+            ctx.fill();
+            ctx.stroke();
+
+
+            if (x + dx > canvas.width || x + dx < 0) {
+                dx = -dx;
+            }
+            if (y + dy > canvas.height) {
+                ballReset();
+                alert("You lose! Game Over!");
+            }
+            if (y + dy < 0) {
+                dy = -dy;
+            } x += dx;
+            y += dy;
+        }
+        setInterval(drawBall, 15);
+        function ballReset() {
+            x = canvas.width / 4;
+            y = canvas.height / 4;
+        }
+        function checBallBar() {
+            if (y > canvas.height - 90 && y < canvas.height + 10 && x > barX
+                && x < barX + 100) {
+                dy *= -1;
+            }
+        }
+
+        function drawBar() {
+            ctx.fillStyle = "gray";
+            ctx.fillRect(barX, 250, 120, 10);
+        }
+        function leftArrowPassed() {
+            ctx.clearRect(barX, 250, 120, 10);
+            barX += - 15;
+            if (barX < 0) {
+                barX = false;
+            } drawBar();
+        }
+        function rightArrowPassed() {
+            ctx.clearRect(barX, 250, 120, 10);
+            barX += 15;
+            if (barX > canvas.width) {
+                barX = false;
+            }
+            drawBar();
+        }
+        function moveSelection(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    leftArrowPassed();
+                    break;
+                case 39:
+                    rightArrowPassed();
+                    break;
+            }
+        }
+
+        function docReady() {
+            window.addEventListener('keydown', moveSelection);
+        }
+
+        var boucing = null;
+        function init() {
+            boucing = document.getElementById("myCanvas");
+            boucing.style.position = 'relative';
+            boucing.style.left = '0px';
+            boucing.style.top = '0px';
+        }
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var gameBoard = new gameBoard(ctx, 480, 320);
+        var radius = 10;
+        var x = canvas.width / 2;
+        var y = canvas.height / 2;
+        var dx = 2;
+        var dy = -2;
+        var barX = 200;
+
+        window.onload = init();
+
+    </script>
+</body>
+
+
+</html>

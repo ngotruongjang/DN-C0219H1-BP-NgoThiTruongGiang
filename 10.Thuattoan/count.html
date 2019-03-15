@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Count</title>
+</head>
+
+<body>
+    <script>
+        function searchNumber(nu) {
+            for (var i = 0; i < nums.length; i++) {
+                if (nums[i] === value) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        function countNumber() {
+            var count = 0;
+            for (var i = 0; i < nums.length; i++) {
+                if (nums[i] === value) {
+                    count++;
+                }
+            }
+            return count;
+        }
+        var nums = [];
+        for (var i = 0; i < 100; i++) {
+            if (i > 0 && i % 10 == 0) {
+                document.write("<br>");
+            }
+            nums[i] = Math.floor(Math.random() * 101);
+            document.write(nums[i] + "&nbsp&nbsp");
+        }
+        var value = parseInt(prompt("Enter a number here "));
+        document.write("<br>");
+        document.write("<br/>");
+        document.write("The number : " + value + " is found at position : " + searchNumber(nums) + "<br>" + " The times appearance of the number : " + countNumber());
+
+
+    </script>
+
+</body>
+
+</html>

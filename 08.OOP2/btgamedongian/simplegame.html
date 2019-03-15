@@ -11,11 +11,13 @@
     <p id="game"></p>
 
     <script>
-        function Frog(image, top, left, size) {
+        function Frog(image, top, left, size,speed) {
             this.image = image;
             this.top = top;
             this.left = left;
             this.size = size;
+            this.speed = speed;
+
 
             this.getImageElement = function () {
                 return '<img width="' + this.size + '"' +
@@ -25,22 +27,26 @@
             }
 
             this.moveRight = function () {
-                this.left += 20;
+                this.left += this.speed;
+                console.log('ok: ' + this.left)
+
             }
 
         }
 
-        var image = new Frog('frog.png', 20, 30, 200);
+        var image = new Frog('frog.png', 20, 30, 200, 50);
 
         function start() {
             if (image.left < window.innerWidth - image.size) {
                 image.moveRight();
             }
+
             document.getElementById("game").innerHTML = image.getImageElement();
             setTimeout(start, 500)
         }
 
         start();
+
 
     </script>
 </body>
